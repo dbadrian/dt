@@ -51,6 +51,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: docker
+          compression-level: 9
           path: /tmp/docker.tar
 
 
