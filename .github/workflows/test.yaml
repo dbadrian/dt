@@ -60,7 +60,9 @@ jobs:
 
 
   test:
+    name: Download and Run container
     runs-on: ubuntu-latest
+    needs: [docker]
     steps:
       - name: "☁️ checkout repository"
         uses: actions/checkout@v3
