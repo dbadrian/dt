@@ -1,22 +1,17 @@
 name: Release
 on:
-  workflow_run:
-    workflows: ["Test"]
-    branches: ['v*.*.*']
-    types: 
-      - completed
+  push:
+    tags:
+      - "v*.*.*"
 
 jobs:
-  on-success:
-    runs-on: ubuntu-latest
-    if: ${{ github.event.workflow_run.conclusion == 'success' }}
-    steps:
-      - run: echo 'The Run Tests workflow passed'
-
   test:
+    uses: dbadrian/dt/.github/workflows/test.yml@main
+
+  run:
     name: Download and Run container
     runs-on: ubuntu-latest
-    needs: [on-success]
+    needs: [test]
     steps:
       - name: "☁️ checkout repository"
         uses: actions/checkout@v3
