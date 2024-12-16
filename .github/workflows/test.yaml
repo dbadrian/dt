@@ -58,7 +58,7 @@ jobs:
         with:
           name: docker
           path: /tmp/docker.tar
-          compression-level: 9
+          compression-level: 0
 
 
   test:
