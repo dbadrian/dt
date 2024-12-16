@@ -34,6 +34,12 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-buildx-
 
+      - name: "🔧 docker meta"
+        id: meta
+        uses: docker/metadata-action@v4
+        with:
+          images: ${{ github.repository }}
+          tags: latest
 
 
       - name: "📦 docker build"
