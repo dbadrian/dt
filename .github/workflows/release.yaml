@@ -6,7 +6,7 @@ on:
 
 jobs:
   test:
-    uses: dbadrian/dt/.github/workflows/test.yml@main
+    uses: dbadrian/dt/.github/workflows/test.yaml@main
 
   run:
     name: Download and Run container
