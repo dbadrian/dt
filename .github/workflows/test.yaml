@@ -88,5 +88,5 @@ jobs:
         run: |
           docker load --input /tmp/docker.tar
           docker image ls -a
-          docker run -it ${{ steps.meta.outputs.tags }}
+          docker run ${{ steps.meta.outputs.tags }}
 
